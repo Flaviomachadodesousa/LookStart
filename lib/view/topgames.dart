@@ -8,7 +8,7 @@ import 'package:lookstart/constants.dart';
 import 'package:lookstart/model/GameModel.dart';
 
 class TopGames extends StatefulWidget {
-  const TopGames({ Key key }) : super(key: key);
+  const TopGames({Key key}) : super(key: key);
 
   @override
   State<TopGames> createState() => _TopGamesState();
@@ -63,7 +63,7 @@ class _TopGamesState extends State<TopGames> {
                   child: Center(
                     child: Image.asset(
                       "assets/loading.gif",
-                      fit: BoxFit.contain,
+                      fit: BoxFit.fill,
                       width: 200,
                       alignment: Alignment.center,
                     ),
@@ -96,6 +96,7 @@ class _TopGamesState extends State<TopGames> {
                           child: Card(
                               elevation: 4.0,
                               clipBehavior: Clip.antiAlias,
+                              semanticContainer: true,
                               child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment:
@@ -105,23 +106,28 @@ class _TopGamesState extends State<TopGames> {
                                     ListTile(
                                       title: Text(
                                         snapshot.data[index].name,
-                                        style: const TextStyle(fontSize: 14, color: Colors.black),
+                                        style: const TextStyle(
+                                            fontSize: 14, color: Colors.black),
                                       ),
-                                      subtitle: Text('\u2605 ' +
-                                          snapshot.data[index].rating
-                                              .toString() +
-                                          '/5', style: const TextStyle(color: Colors.amber),),
+                                      subtitle: Text(
+                                        '\u2605 ' +
+                                            snapshot.data[index].rating
+                                                .toString() +
+                                            '/5',
+                                        style: const TextStyle(
+                                            color: Colors.amber),
+                                      ),
                                       //trailing:Icon(Icons.star),
                                     ),
                                     Container(
-                                      height: 115,
+                                      height: 106,
                                       decoration: BoxDecoration(
                                           color: Colors.black,
                                           image: DecorationImage(
                                               image: CachedNetworkImageProvider(
                                                   snapshot.data[index]
                                                       .backgroundImage),
-                                              fit: BoxFit.cover)),
+                                              fit: BoxFit.fill)),
                                     ),
                                   ])));
                     },

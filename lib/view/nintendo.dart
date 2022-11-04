@@ -8,7 +8,7 @@ import 'package:lookstart/constants.dart';
 import 'package:lookstart/model/GameModel.dart';
 
 class Nintendo extends StatefulWidget {
-  const Nintendo({ Key key }) : super(key: key);
+  const Nintendo({Key key}) : super(key: key);
 
   @override
   State<Nintendo> createState() => _NintendoState();
@@ -50,11 +50,11 @@ class _NintendoState extends State<Nintendo> {
     var media = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          title: const Text('Nintendo Switch'),
-          centerTitle: true,
-          backgroundColor: Color(Constants.colorThemePurple),
-        ),
+      appBar: AppBar(
+        title: const Text('Nintendo Switch'),
+        centerTitle: true,
+        backgroundColor: Color(Constants.colorThemePurple),
+      ),
       body: Stack(alignment: Alignment.topCenter, children: <Widget>[
         Container(
           decoration: const BoxDecoration(
@@ -110,23 +110,28 @@ class _NintendoState extends State<Nintendo> {
                                     ListTile(
                                       title: Text(
                                         snapshot.data[index].name,
-                                        style: const TextStyle(fontSize: 14, color: Colors.black),
+                                        style: const TextStyle(
+                                            fontSize: 14, color: Colors.black),
                                       ),
-                                      subtitle: Text('\u2605 ' +
-                                          snapshot.data[index].rating
-                                              .toString() +
-                                          '/5', style: const TextStyle(color: Colors.amber),),
+                                      subtitle: Text(
+                                        '\u2605 ' +
+                                            snapshot.data[index].rating
+                                                .toString() +
+                                            '/5',
+                                        style: const TextStyle(
+                                            color: Colors.amber),
+                                      ),
                                       //trailing:Icon(Icons.star),
                                     ),
                                     Container(
-                                      height: 115,
+                                      height: 106,
                                       decoration: BoxDecoration(
                                           color: Colors.black,
                                           image: DecorationImage(
                                               image: CachedNetworkImageProvider(
                                                   snapshot.data[index]
                                                       .backgroundImage),
-                                              fit: BoxFit.cover)),
+                                              fit: BoxFit.fill)),
                                     ),
                                   ])));
                     },

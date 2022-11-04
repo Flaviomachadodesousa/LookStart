@@ -8,7 +8,7 @@ import 'package:lookstart/constants.dart';
 import 'package:lookstart/model/GameModel.dart';
 
 class XboxOne extends StatefulWidget {
-  const XboxOne({ Key key }) : super(key: key);
+  const XboxOne({Key key}) : super(key: key);
 
   @override
   State<XboxOne> createState() => _XboxOneState();
@@ -50,11 +50,11 @@ class _XboxOneState extends State<XboxOne> {
     var media = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          title: const Text('XBOX Serie S'),
-          centerTitle: true,
-          backgroundColor: Color(Constants.colorThemePurple),
-        ),
+      appBar: AppBar(
+        title: const Text('XBOX Serie S'),
+        centerTitle: true,
+        backgroundColor: Color(Constants.colorThemePurple),
+      ),
       body: Stack(alignment: Alignment.topCenter, children: <Widget>[
         Container(
           decoration: const BoxDecoration(
@@ -110,23 +110,28 @@ class _XboxOneState extends State<XboxOne> {
                                     ListTile(
                                       title: Text(
                                         snapshot.data[index].name,
-                                        style: const TextStyle(fontSize: 14, color: Colors.black),
+                                        style: const TextStyle(
+                                            fontSize: 14, color: Colors.black),
                                       ),
-                                      subtitle: Text('\u2605 ' +
-                                          snapshot.data[index].rating
-                                              .toString() +
-                                          '/5', style: const TextStyle(color: Colors.amber),),
+                                      subtitle: Text(
+                                        '\u2605 ' +
+                                            snapshot.data[index].rating
+                                                .toString() +
+                                            '/5',
+                                        style: const TextStyle(
+                                            color: Colors.amber),
+                                      ),
                                       //trailing:Icon(Icons.star),
                                     ),
                                     Container(
-                                      height: 115,
+                                      height: 106,
                                       decoration: BoxDecoration(
                                           color: Colors.black,
                                           image: DecorationImage(
                                               image: CachedNetworkImageProvider(
                                                   snapshot.data[index]
                                                       .backgroundImage),
-                                              fit: BoxFit.cover)),
+                                              fit: BoxFit.fill)),
                                     ),
                                   ])));
                     },

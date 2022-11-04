@@ -6,9 +6,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:lookstart/constants.dart';
 import 'package:lookstart/model/GameModel.dart';
+import 'package:lookstart/view/game_info.dart';
 
 class Android extends StatefulWidget {
-  const Android({ Key key }) : super(key: key);
+  const Android({Key key}) : super(key: key);
 
   @override
   State<Android> createState() => _AndroidState();
@@ -49,11 +50,11 @@ class _AndroidState extends State<Android> {
     var media = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          title: const Text('Android'),
-          centerTitle: true,
-          backgroundColor: Color(Constants.colorThemePurple),
-        ),
+      appBar: AppBar(
+        title: const Text('Android'),
+        centerTitle: true,
+        backgroundColor: Color(Constants.colorThemePurple),
+      ),
       body: Stack(alignment: Alignment.topCenter, children: <Widget>[
         Container(
           decoration: const BoxDecoration(
@@ -95,7 +96,15 @@ class _AndroidState extends State<Android> {
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
                           onTap: () {
-                            print("Container clicked");
+                            print(snapshot.data[index].id);
+
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => GameInfo(
+                                    idgame: snapshot.data[index].id,
+                                  ),
+                                ));
                           },
                           child: Card(
                               elevation: 4.0,
@@ -109,23 +118,28 @@ class _AndroidState extends State<Android> {
                                     ListTile(
                                       title: Text(
                                         snapshot.data[index].name,
-                                        style: const TextStyle(fontSize: 14, color: Colors.black),
+                                        style: const TextStyle(
+                                            fontSize: 14, color: Colors.black),
                                       ),
-                                      subtitle: Text('\u2605 ' +
-                                          snapshot.data[index].rating
-                                              .toString() +
-                                          '/5', style: const TextStyle(color: Colors.amber),),
+                                      subtitle: Text(
+                                        '\u2605 ' +
+                                            snapshot.data[index].rating
+                                                .toString() +
+                                            '/5',
+                                        style: const TextStyle(
+                                            color: Colors.amber),
+                                      ),
                                       //trailing:Icon(Icons.star),
                                     ),
                                     Container(
-                                      height: 115,
+                                      height: 106,
                                       decoration: BoxDecoration(
                                           color: Colors.black,
                                           image: DecorationImage(
                                               image: CachedNetworkImageProvider(
                                                   snapshot.data[index]
                                                       .backgroundImage),
-                                              fit: BoxFit.cover)),
+                                              fit: BoxFit.fill)),
                                     ),
                                   ])));
                     },

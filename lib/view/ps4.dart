@@ -8,7 +8,7 @@ import 'package:lookstart/constants.dart';
 import 'package:lookstart/model/GameModel.dart';
 
 class Ps4 extends StatefulWidget {
-  const Ps4({ Key key }) : super(key: key);
+  const Ps4({Key key}) : super(key: key);
 
   @override
   State<Ps4> createState() => _Ps4State();
@@ -50,11 +50,11 @@ class _Ps4State extends State<Ps4> {
     var media = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          title: const Text('PlayStation 4'),
-          centerTitle: true,
-          backgroundColor: Color(Constants.colorThemePurple),
-        ),
+      appBar: AppBar(
+        title: const Text('PlayStation 4'),
+        centerTitle: true,
+        backgroundColor: Color(Constants.colorThemePurple),
+      ),
       body: Stack(alignment: Alignment.topCenter, children: <Widget>[
         Container(
           decoration: const BoxDecoration(
@@ -110,16 +110,21 @@ class _Ps4State extends State<Ps4> {
                                     ListTile(
                                       title: Text(
                                         snapshot.data[index].name,
-                                        style: const TextStyle(fontSize: 14, color: Colors.black),
+                                        style: const TextStyle(
+                                            fontSize: 14, color: Colors.black),
                                       ),
-                                      subtitle: Text('\u2605 ' +
-                                          snapshot.data[index].rating
-                                              .toString() +
-                                          '/5', style: const TextStyle(color: Colors.amber),),
+                                      subtitle: Text(
+                                        '\u2605 ' +
+                                            snapshot.data[index].rating
+                                                .toString() +
+                                            '/5',
+                                        style: const TextStyle(
+                                            color: Colors.amber),
+                                      ),
                                       //trailing:Icon(Icons.star),
                                     ),
                                     Container(
-                                      height: 115,
+                                      height: 106,
                                       decoration: BoxDecoration(
                                           color: Colors.black,
                                           image: DecorationImage(

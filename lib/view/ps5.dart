@@ -50,11 +50,11 @@ class _Ps5State extends State<Ps5> {
     var media = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          title: const Text('PlayStation 5'),
-          centerTitle: true,
-          backgroundColor: Color(Constants.colorThemePurple),
-        ),
+      appBar: AppBar(
+        title: const Text('PlayStation 5'),
+        centerTitle: true,
+        backgroundColor: Color(Constants.colorThemePurple),
+      ),
       body: Stack(alignment: Alignment.topCenter, children: <Widget>[
         Container(
           decoration: const BoxDecoration(
@@ -111,23 +111,28 @@ class _Ps5State extends State<Ps5> {
                                     ListTile(
                                       title: Text(
                                         snapshot.data[index].name,
-                                        style: const TextStyle(fontSize: 14, color: Colors.black),
+                                        style: const TextStyle(
+                                            fontSize: 14, color: Colors.black),
                                       ),
-                                      subtitle: Text('\u2605 ' +
-                                          snapshot.data[index].rating
-                                              .toString() +
-                                          '/5', style: const TextStyle(color: Colors.amber),),
+                                      subtitle: Text(
+                                        '\u2605 ' +
+                                            snapshot.data[index].rating
+                                                .toString() +
+                                            '/5',
+                                        style: const TextStyle(
+                                            color: Colors.amber),
+                                      ),
                                       //trailing:Icon(Icons.star),
                                     ),
                                     Container(
-                                      height: 115,
+                                      height: 106,
                                       decoration: BoxDecoration(
                                           color: Colors.black,
                                           image: DecorationImage(
                                               image: CachedNetworkImageProvider(
                                                   snapshot.data[index]
                                                       .backgroundImage),
-                                              fit: BoxFit.cover)),
+                                              fit: BoxFit.fill)),
                                     ),
                                   ])));
                     },
