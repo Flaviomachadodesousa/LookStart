@@ -80,7 +80,7 @@ class _PcState extends State<Pc> {
                     padding:
                         EdgeInsets.all(15), //apply padding to all four sides
                     child: Text(
-                      'Top 20 games PC',
+                      'Top games PC',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 22),
                     ),

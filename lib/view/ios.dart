@@ -80,7 +80,7 @@ class _IosState extends State<Ios> {
                     padding:
                         EdgeInsets.all(15), //apply padding to all four sides
                     child: Text(
-                      'Top 20 games Iphone',
+                      'Top games Iphone',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 22),
                     ),

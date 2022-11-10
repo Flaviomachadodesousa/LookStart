@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lookstart/constants.dart';
 import 'package:lookstart/view/favoritos.dart';
 import 'package:lookstart/view/plataforma.dart';
+import 'package:lookstart/view/procurar.dart';
 import 'package:lookstart/view/topgames.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,12 +16,17 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _indiceAtual = 0;
-  final List<Widget> _telas = [TopGames(), Plataforma(),/* Preco(),*/ Favoritos()];
+  final List<Widget> _telas = [
+    TopGames(),
+    Plataforma(),
+    Procurar(),
+    Favoritos()
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
         appBar: AppBar(
           title: const Text('LookStart'),
           centerTitle: true,
@@ -33,7 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(10), topLeft: Radius.circular(10)),
               boxShadow: const [
-                BoxShadow(color: Colors.transparent, spreadRadius: 0, blurRadius: 10),
+                BoxShadow(
+                    color: Colors.transparent, spreadRadius: 0, blurRadius: 10),
               ],
             ),
             child: ClipRRect(
@@ -55,19 +62,26 @@ class _HomeScreenState extends State<HomeScreen> {
                         size: 32,
                       ),
                       icon: Icon(Icons.home),
-                      title: Text("Inicio", style: TextStyle(color: Colors.white))),
+                      title: Text("Inicio",
+                          style: TextStyle(color: Colors.white))),
                   BottomNavigationBarItem(
-                      activeIcon: Icon(Icons.gamepad, color: Colors.orange, size: 32),
+                      activeIcon:
+                          Icon(Icons.gamepad, color: Colors.orange, size: 32),
                       icon: Icon(Icons.gamepad),
-                      title: Text("Plataformas", style: TextStyle(color: Colors.white))),
-                  /*BottomNavigationBarItem(
-                      activeIcon: Icon(Icons.monetization_on,color: Colors.green, size: 32),
-                      icon: Icon(Icons.monetization_on),
-                      title: Text("Preço", style: TextStyle(color: Colors.white))),*/
+                      title: Text("Plataformas",
+                          style: TextStyle(color: Colors.white))),
                   BottomNavigationBarItem(
-                      activeIcon:Icon(Icons.favorite, color: Colors.red, size: 32),
+                      activeIcon:
+                          Icon(Icons.search, color: Colors.green, size: 32),
+                      icon: Icon(Icons.search),
+                      title: Text("Procurar",
+                          style: TextStyle(color: Colors.white))),
+                  BottomNavigationBarItem(
+                      activeIcon:
+                          Icon(Icons.favorite, color: Colors.red, size: 32),
                       icon: Icon(Icons.favorite),
-                      title: Text("Favoritos", style: TextStyle(color: Colors.white))),
+                      title: Text("Favoritos",
+                          style: TextStyle(color: Colors.white))),
                 ],
               ),
             )));

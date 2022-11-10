@@ -80,7 +80,7 @@ class _XboxSXState extends State<XboxSX> {
                     padding:
                         EdgeInsets.all(15), //apply padding to all four sides
                     child: Text(
-                      'Top 20 games XBOX Serie X',
+                      'Top games XBOX Serie X',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 22),
                     ),

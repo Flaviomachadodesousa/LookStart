@@ -75,7 +75,7 @@ class _TopGamesState extends State<TopGames> {
                     padding:
                         EdgeInsets.all(15), //apply padding to all four sides
                     child: Text(
-                      'Top 20 Melhores Games',
+                      'Top Games',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 22),
                     ),

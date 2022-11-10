@@ -8,7 +8,6 @@ class Gameinfomodel {
   String description;
   int metacritic;
   String released;
-  bool tba;
   String updated;
   String backgroundImage;
   String backgroundImageAdditional;
@@ -39,7 +38,6 @@ class Gameinfomodel {
   int reviewsCount;
   String saturatedColor;
   String dominantColor;
-  String clip;
   String descriptionRaw;
 
   Gameinfomodel(
@@ -50,7 +48,6 @@ class Gameinfomodel {
       this.description,
       this.metacritic,
       this.released,
-      this.tba,
       this.updated,
       this.backgroundImage,
       this.backgroundImageAdditional,
@@ -81,7 +78,6 @@ class Gameinfomodel {
       this.reviewsCount,
       this.saturatedColor,
       this.dominantColor,
-      this.clip,
       this.descriptionRaw});
 
   Gameinfomodel.fromJson(Map<String, dynamic> json) {
@@ -92,7 +88,6 @@ class Gameinfomodel {
     description = json['description'];
     metacritic = json['metacritic'];
     released = json['released'];
-    tba = json['tba'];
     updated = json['updated'];
     backgroundImage = json['background_image'];
     backgroundImageAdditional = json['background_image_additional'];
@@ -123,7 +118,6 @@ class Gameinfomodel {
     reviewsCount = json['reviews_count'];
     saturatedColor = json['saturated_color'];
     dominantColor = json['dominant_color'];
-    clip = json['clip'];
     descriptionRaw = json['description_raw'];
   }
 
@@ -136,7 +130,6 @@ class Gameinfomodel {
     data['description'] = this.description;
     data['metacritic'] = this.metacritic;
     data['released'] = this.released;
-    data['tba'] = this.tba;
     data['updated'] = this.updated;
     data['background_image'] = this.backgroundImage;
     data['background_image_additional'] = this.backgroundImageAdditional;
@@ -167,7 +160,6 @@ class Gameinfomodel {
     data['reviews_count'] = this.reviewsCount;
     data['saturated_color'] = this.saturatedColor;
     data['dominant_color'] = this.dominantColor;
-    data['clip'] = this.clip;
     data['description_raw'] = this.descriptionRaw;
     return data;
   }

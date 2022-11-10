@@ -80,7 +80,7 @@ class _Ps4State extends State<Ps4> {
                     padding:
                         EdgeInsets.all(15), //apply padding to all four sides
                     child: Text(
-                      'Top 20 games PlayStation 4',
+                      'Top games PlayStation 4',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 22),
                     ),

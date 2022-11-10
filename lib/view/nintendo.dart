@@ -80,7 +80,7 @@ class _NintendoState extends State<Nintendo> {
                     padding:
                         EdgeInsets.all(15), //apply padding to all four sides
                     child: Text(
-                      'Top 20 games Nintendo Switch',
+                      'Top games Nintendo Switch',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 22),
                     ),

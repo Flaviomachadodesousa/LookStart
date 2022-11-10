@@ -6,20 +6,28 @@ class Constants {
   static int colorThemePurple = 0xFF6408CC;
   static int colorappbar = 0xFFB3B1B6;
 
-
   //titulo
   static String titulo = 'LookStart';
 
   //URL
-  static String urltopgames = 'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100';
-  static String urlPC = 'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=4';
-  static String urlPS5 = 'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=187';
-  static String urlPS4 = 'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=18';
-  static String urlNintendo = 'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=7';
-  static String urlXboxs = 'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=186';
-  static String urlXboxx = 'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=186';
-  static String urlandroid = 'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=21';
-  static String urlOIS = 'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=3';
+  static String urltopgames =
+      'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&page_size=100';
+  static String urlPC =
+      'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=4&page_size=100';
+  static String urlPS5 =
+      'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=187&page_size=100';
+  static String urlPS4 =
+      'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=18&page_size=100';
+  static String urlNintendo =
+      'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=7&page_size=100';
+  static String urlXboxs =
+      'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=186&page_size=100';
+  static String urlXboxx =
+      'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=186&page_size=100';
+  static String urlandroid =
+      'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=21&page_size=100';
+  static String urlOIS =
+      'https://api.rawg.io/api/games?key=e34347145e534d248d800b0b8f9547e9&metacritic=90,100&platforms=3&page_size=100';
 
   //IMAGENS
   static String logo = 'assets/logo.png';
