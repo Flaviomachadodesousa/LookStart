@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:lookstart/constants.dart';
 
 import 'package:lookstart/model/GameModel.dart';
 
@@ -37,16 +38,6 @@ class _ProcurarState extends State<Procurar> {
     return notes;
   }
 
-  @override
-  void initState() {
-    fetchNotes(search).then((value) {
-      setState(() {
-        _notes.addAll(value);
-      });
-    });
-    super.initState();
-  }
-
   Future<GameModel> insert(search) {
     fetchNotes(search).then((value) {
       setState(() {
@@ -66,21 +57,35 @@ class _ProcurarState extends State<Procurar> {
                 image: AssetImage("assets/backgroud.png"), fit: BoxFit.fill)),
       ),
       Container(
-          margin: const EdgeInsets.all(10),
+        width: media.width,
+        height: 85,
+        decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10),
+                topLeft: Radius.circular(0),
+                topRight: Radius.circular(0)),
+            color: Color(0xFF6408CC)),
+      ),
+      Container(
+          margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
+                alignment: Alignment.topCenter,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white),
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                ),
                 child: TextFormField(
                   style: const TextStyle(color: Colors.black),
                   controller: search,
                   decoration: InputDecoration(
-                    hintText: "Procurar",
-                    fillColor: Colors.white,
+                    labelStyle: const TextStyle(color: Colors.black),
+                    hintText: 'Procurar',
+                    hintStyle: const TextStyle(color: Colors.black),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)),
                     focusedBorder: const OutlineInputBorder(
@@ -91,21 +96,19 @@ class _ProcurarState extends State<Procurar> {
                         size: 30,
                       ),
                       onPressed: () {
+                        _notes.clear();
                         insert(search.text);
                         search.clear();
-                        setState(() {});
-                        //CONSULTAR
-                        //https://www.youtube.com/watch?v=YOzCwuau-Xo
                       },
                     ),
                   ),
                 ),
               ),
               Expanded(
-                  child: _notes.length == 0
+                  child: _notes.isEmpty
                       ? GridView.builder(
                           padding: const EdgeInsets.only(
-                              left: 10.0, top: 10.0, right: 10.0, bottom: 10.0),
+                              left: 10.0, top: 30.0, right: 10.0, bottom: 10.0),
                           itemCount: _notes.length,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
@@ -138,7 +141,7 @@ class _ProcurarState extends State<Procurar> {
                                               '\u2605 ' +
                                                   //snapshot.data[index].rating
                                                   //    .toString() +
-                                                  'nada mais tem' +
+                                                  'Nada' +
                                                   '/5',
                                               style: TextStyle(
                                                   color: Colors.amber),
@@ -150,7 +153,7 @@ class _ProcurarState extends State<Procurar> {
                         )
                       : GridView.builder(
                           padding: const EdgeInsets.only(
-                              left: 10.0, top: 10.0, right: 10.0, bottom: 10.0),
+                              left: 0.0, top: 20.0, right: 0.0, bottom: 10.0),
                           itemCount: _notes.length,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
@@ -168,7 +171,7 @@ class _ProcurarState extends State<Procurar> {
                                             CrossAxisAlignment.center,
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
-                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisSize: MainAxisSize.max,
                                         children: [
                                           ListTile(
                                             title: Text(
