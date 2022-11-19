@@ -34,6 +34,7 @@ dependencies:
   carousel_slider: ^4.1.1
   cached_network_image: ^3.2.0
   path_provider: ^2.0.3
+  animated_text_kit: ^4.2.1
 
   flutter:
     sdk: flutter
@@ -77,6 +78,8 @@ flutter:
     - assets/xboxseries.jpg
     - assets/xboxseriex.jpg
     - assets/backgroud.png
+    - assets/login_image.png
+
     
   # To add assets to your application, add an assets section, like this:
   # assets:
