@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lookstart/view/homescreen.dart';
+import 'package:lookstart/view/topgames.dart';
 
 class Login extends StatefulWidget {
   const Login({Key key}) : super(key: key);
@@ -117,6 +119,31 @@ class _LoginState extends State<Login> {
                                 children: const [
                                   Text(
                                     "Login",
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                ]),
+                          ))),
+                  Center(
+                      child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const TopGames()));
+                          },
+                          child: Container(
+                            width: media.width / 1.5,
+                            decoration: const BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(7)),
+                                color: Colors.white),
+                            padding: const EdgeInsets.all(15),
+                            child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Text(
+                                    "Ir sem login",
                                     style: TextStyle(fontSize: 16),
                                   ),
                                 ]),
