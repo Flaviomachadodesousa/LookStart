@@ -38,7 +38,8 @@ class _GameInfoState extends State<GameInfo> {
           centerTitle: true,
           backgroundColor: Color(Constants.colorThemePurple),
         ),
-        body: Stack(alignment: Alignment.center, children: <Widget>[
+        body: SingleChildScrollView(
+            child: Stack(alignment: Alignment.center, children: <Widget>[
           Container(
             height: media.height,
             width: media.width,
@@ -96,12 +97,38 @@ class _GameInfoState extends State<GameInfo> {
                             ),
                           ),
                         )),
-                    Flexible(
-                        child: Container(
-                            decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6.0),
-                      color: Colors.white54,
-                    )))
+                    Container(
+                      width: media.width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(0.0),
+                        color: Colors.white54,
+                      ),
+                      child: Text(snapshot.data.name),
+                    ),
+                    Container(
+                      width: media.width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(0.0),
+                        color: Colors.white54,
+                      ),
+                      child: Text(snapshot.data.website),
+                    ),
+                    Container(
+                      width: media.width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(0.0),
+                        color: Colors.white54,
+                      ),
+                      child: Text(snapshot.data.metacriticUrl),
+                    ),
+                    Container(
+                      width: media.width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(0.0),
+                        color: Colors.white54,
+                      ),
+                      child: Text(snapshot.data.descriptionRaw),
+                    ),
                   ]));
                 } else {
                   return const Center(
@@ -128,6 +155,6 @@ class _GameInfoState extends State<GameInfo> {
               }
             },
           )*/
-        ]));
+        ])));
   }
 }

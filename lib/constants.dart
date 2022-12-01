@@ -92,20 +92,6 @@ class Constants {
   static String previousLat = 'previousLat';
   static String previousLng = 'previousLng';
 
-  // payment Setting
-  static String appPaymentWallet = 'appPaymentWallet';
-  static String appPaymentCOD = 'appPaymentCOD';
-  static String appPaymentStripe = 'appPaymentStripe';
-  static String appPaymentRozerPay = 'appPaymentRozerPay';
-  static String appPaymentPaypal = 'appPaymentPaypal';
-  static String appStripePublishKey = 'appStripePublishKey';
-  static String appStripeSecretKey = 'appStripeSecretKey';
-  static String appPaypalProduction = 'appPaypalProducation';
-  static String appPaypalClientId = 'appPaypal_client_id';
-  static String appPaypalSecretKey = 'appPaypal_secret_key';
-  static String appPaypalSendBox = 'appPaypalSendbox';
-  static String appRozerpayPublishKey = 'appRozerpayPublishKey';
-
   static Future<bool> checkNetwork(context) async {
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult == ConnectivityResult.mobile) {

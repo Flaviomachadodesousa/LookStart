@@ -102,34 +102,37 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   Center(
-                      child: GestureDetector(
-                          onTap: () {
-                            print("Container clicked");
-                          },
-                          child: Container(
-                            width: media.width / 1.5,
-                            decoration: const BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(7)),
-                                color: Colors.white),
-                            padding: const EdgeInsets.all(15),
-                            child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Text(
-                                    "Login",
-                                    style: TextStyle(fontSize: 16),
-                                  ),
-                                ]),
-                          ))),
+                      child: Padding(
+                          padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+                          child: GestureDetector(
+                              onTap: () {
+                                print("Container clicked");
+                              },
+                              child: Container(
+                                width: media.width / 1.5,
+                                decoration: const BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(7)),
+                                    color: Colors.white),
+                                padding: const EdgeInsets.all(15),
+                                child: Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Text(
+                                        "Login",
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                    ]),
+                              )))),
                   Center(
                       child: GestureDetector(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const TopGames()));
+                                    builder: (context) => const HomeScreen()));
                           },
                           child: Container(
                             width: media.width / 1.5,

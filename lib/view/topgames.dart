@@ -6,6 +6,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:lookstart/constants.dart';
 import 'package:lookstart/model/GameModel.dart';
+import 'package:lookstart/view/game_info.dart';
 
 class TopGames extends StatefulWidget {
   const TopGames({Key key}) : super(key: key);
@@ -92,6 +93,13 @@ class _TopGamesState extends State<TopGames> {
                       return GestureDetector(
                           onTap: () {
                             print("Container clicked");
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => GameInfo(
+                                    idgame: snapshot.data[index].id,
+                                  ),
+                                ));
                           },
                           child: Card(
                               elevation: 4.0,
